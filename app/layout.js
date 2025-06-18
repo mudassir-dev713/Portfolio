@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://mudassir-webdev.vercel.app/'),
   title: 'Mudassir - Full Stack Web Developer | React, Next.js, Node.js',
   description:
     'Self-taught web developer specializing in React, Next.js, and modern web technologies. Building fast, accessible, and visually appealing web applications.',
@@ -49,7 +50,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://your-domain.com',
+    url: 'https://mudassir-webdev.vercel.app/',
     title: 'Mudassir - Full Stack Web Developer',
     description:
       'Self-taught web developer specializing in React, Next.js, and modern web technologies.',
@@ -71,22 +72,27 @@ export const metadata = {
     images: ['/og-image.png'],
     creator: '@Mudassir82794462',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
   verification: {
     google: 'your-google-verification-code',
   },
   alternates: {
-    canonical: 'https://your-domain.com',
+    canonical: 'https://mudassir-webdev.vercel.app/',
   },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -113,11 +119,8 @@ export default function RootLayout({ children }) {
               jobTitle: 'Full Stack Web Developer',
               description:
                 'Self-taught web developer specializing in React, Next.js, and modern web technologies',
-              url: 'https://your-domain.com',
-              sameAs: [
-                'https://github.com/yourusername',
-                'https://linkedin.com/in/yourusername',
-              ],
+              url: 'https://mudassir-webdev.vercel.app/',
+              sameAs: ['https://github.com/mudassir-dev713'],
               knowsAbout: [
                 'React',
                 'Next.js',
@@ -135,12 +138,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="dark:bg-black-100 bg-white overflow-x-hidden">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider>
           <PerformanceMonitor />
           <PreloadManager />
           {children}
