@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://your-domain.com';
+  const baseUrl = 'https://mudassir-webdev.vercel.app/';
 
   return [
     {

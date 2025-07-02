@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import { motion, stagger, useAnimate } from 'motion/react';
 import { cn } from '../../lib/utils';
+import Balancer from 'react-wrap-balancer';
 
 export const TextGenerateEffect = ({
   words,
@@ -54,7 +55,9 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn(className)}>
       <div className="mt-4">
-        <div className="leading-snug tracking-wide">{renderWords()}</div>
+        <div className="leading-snug tracking-wide">
+          <Balancer>{renderWords()}</Balancer>
+        </div>
       </div>
     </div>
   );

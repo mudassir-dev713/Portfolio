@@ -7,7 +7,16 @@ html {
   overflow-x: hidden !important;
   scroll-behavior: smooth !important;
 }
-
+:root {
+  --font-open-sans: 'Open Sans', sans-serif;
+  --font-orbitron: 'Orbitron', sans-serif;
+}
+.logo {
+  font-family: var(--font-orbitron);
+}
+body {
+  font-family: var(--font-open-sans);
+}
 
 @layer base {
   :root {
@@ -74,7 +83,6 @@ html {
 }
 
 @layer base {
-
   body {
     @apply bg-background text-foreground;
   }
@@ -86,7 +94,7 @@ html {
 
 @layer utilities {
   .heading {
-    @apply font-bold text-4xl md:text-5xl text-center;
+    @apply text-4xl font-bold text-center md:text-5xl;
   }
 
   .black-gradient {
@@ -98,16 +106,13 @@ html {
   }
 
   .card {
-    border: .01px solid;
+    border: 0.01px solid;
     border-color: var(--border);
   }
-
-
 }
 
 .about-text::before {
-
-  content: "";
+  content: '';
   position: absolute;
   left: -2%;
   top: 50%;

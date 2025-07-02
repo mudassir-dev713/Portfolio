@@ -43,7 +43,7 @@ export const FloatingNav = ({ navItems, className }) => {
         )}
       >
         {/* Left-aligned "Mudassir" */}
-        <div className="absolute left-4 text-xl md:px-12 px-4 sm:text-3xl font-bold dark:text-white text-black select-none">
+        <div className="absolute px-4 text-xl font-bold text-black select-none  logo left-4 md:px-12 sm:text-3xl dark:text-white">
           Mudassir
         </div>
 
@@ -53,10 +53,10 @@ export const FloatingNav = ({ navItems, className }) => {
             <a
               key={`link-${idx}`}
               href={navItem.link}
-              className="relative tracking-wider dark:text-neutral-50 text-neutral-700 dark:hover:text-neutral-300 hover:text-neutral-500 flex items-center space-x-1"
+              className="relative flex items-center space-x-1 tracking-wider dark:text-neutral-50 text-neutral-700 dark:hover:text-neutral-300 hover:text-neutral-500"
             >
               <span className="block sm:hidden">{navItem?.icon}</span>
-              <span className="hidden sm:block text-sm">{navItem.name}</span>
+              <span className="hidden text-sm sm:block">{navItem.name}</span>
             </a>
           ))}
         </div>

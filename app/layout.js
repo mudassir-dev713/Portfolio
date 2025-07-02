@@ -1,23 +1,22 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inter, Supermercado_One } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from './components/ThemeProvider';
 import PerformanceMonitor from './components/PerformanceMonitor';
 import PreloadManager from './components/PreloadManager';
+import { Provider } from 'react-wrap-balancer';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const openSans = Inter({
+  variable: '--font-open-sans',
   subsets: ['latin'],
   display: 'swap',
   preload: true,
 });
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const orbitron = Supermercado_One({
+  variable: '--font-orbitron',
   subsets: ['latin'],
+  weight: ['400'],
   display: 'swap',
-  preload: true,
 });
-
 export const metadata = {
   metadataBase: new URL('https://mudassir-webdev.vercel.app/'),
   title: 'Mudassir - Full Stack Web Developer | React, Next.js, Node.js',
@@ -88,11 +87,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -107,7 +102,6 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -137,11 +131,13 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="dark:bg-black-100 bg-white overflow-x-hidden">
+      <body
+        className={`overflow-x-hidden bg-white dark:bg-black-100  ${openSans.variable} ${orbitron.variable}`}
+      >
         <ThemeProvider>
           <PerformanceMonitor />
           <PreloadManager />
-          {children}
+          <Provider>{children}</Provider>
         </ThemeProvider>
       </body>
     </html>

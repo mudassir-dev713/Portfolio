@@ -8,7 +8,6 @@ export function ThemeProvider({ children, ...props }) {
     <NextThemesProvider
       attribute="class"
       defaultTheme="dark"
-      enableSystem
       disableTransitionOnChange
       suppressHydrationWarning
       {...props}
