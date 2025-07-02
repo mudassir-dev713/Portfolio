@@ -11,12 +11,14 @@ const openSans = Inter({
   display: 'swap',
   preload: true,
 });
+
 const orbitron = Supermercado_One({
   variable: '--font-orbitron',
   subsets: ['latin'],
   weight: ['400'],
   display: 'swap',
 });
+
 export const metadata = {
   metadataBase: new URL('https://mudassir-webdev.vercel.app/'),
   title: 'Mudassir - Full Stack Web Developer | React, Next.js, Node.js',
@@ -56,7 +58,7 @@ export const metadata = {
     siteName: 'Mudassir Portfolio',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://mudassir-webdev.vercel.app/og-image.png', // ✅ FULL URL
         width: 1200,
         height: 630,
         alt: 'Mudassir - Full Stack Web Developer',
@@ -68,7 +70,7 @@ export const metadata = {
     title: 'Mudassir - Full Stack Web Developer',
     description:
       'Self-taught web developer specializing in React, Next.js, and modern web technologies.',
-    images: ['/og-image.png'],
+    images: ['https://mudassir-webdev.vercel.app/og-image.png'],
     creator: '@Mudassir82794462',
   },
   verification: {
@@ -87,7 +89,11 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${openSans.variable} ${orbitron.variable}`}
+    >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -102,7 +108,6 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -131,9 +136,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body
-        className={`overflow-x-hidden bg-white dark:bg-black-100  ${openSans.variable} ${orbitron.variable}`}
-      >
+      <body className="overflow-x-hidden bg-white dark:bg-black-100">
         <ThemeProvider>
           <PerformanceMonitor />
           <PreloadManager />
