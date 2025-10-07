@@ -92,6 +92,6 @@ export const projects = [
     des: 'FilmSnaps is a sleek and modern movie discovery platform built with Next.js and React Query, powered by the TMDB API. It features trending movies and TV shows with dynamic filtering, category browsing, smooth UI transitions, and instant YouTube trailer previews — all optimized for speed and performance.',
     img: '/film.png',
     iconLists: ['/re.svg', '/tail.svg', '/js.svg', 'firebase.svg'],
-    link: 'https://filmsnaps.netlify.app/',
+    link: 'https://filmsnaps.vercel.app/',
   },
 ];
